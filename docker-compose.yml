@@ -19,8 +19,9 @@ services:
         ports:
             - "9000:9001"
         volumes:
-            - ./symfony:/var/www/symfony:cached
+            - ../symfony:/var/www/symfony:cached
             - ./logs/symfony:/var/www/symfony/var/log:cached
+        workdir: /var/www/symfony
         depends_on: 
             - db
         networks:
@@ -37,7 +38,8 @@ services:
             - php
         volumes:
             - ./logs/nginx:/var/log/nginx:cached
-            - ./symfony:/var/www/symfony:cached
+            - ../symfony:/var/www/symfony:cached
+        workdir: /var/www/symfony
     elasticsearch:
         container_name: elasticsearch
         image: docker.elastic.co/elasticsearch/elasticsearch:7.4.2
