@@ -17,6 +17,8 @@ RUN apk add --update --no-cache \
     php7-mcrypt \
     php7-fileinfo\
     php7-mbstring \
+    php7-common \
+    php7-exif \
     php7-opcache \
     php7-openssl \
     php7-pdo \
